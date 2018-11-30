@@ -19,7 +19,7 @@ def topKey(queue):
 
 
 #------------------------------------------------------------------------------
-#   xxxxx
+#   Calculate heuresitic distance
 #------------------------------------------------------------------------------
 def heuristic_from_s(graph, id, s):
     x_distance = abs(int(id.split('x')[1][0]) - int(s.split('x')[1][0]))
@@ -28,7 +28,7 @@ def heuristic_from_s(graph, id, s):
 
 
 #------------------------------------------------------------------------------
-#   xxxxx
+#   Calculate key or ordering the priority queue
 #------------------------------------------------------------------------------
 def calculateKey(graph, id, s_current, k_m):
     return (
@@ -38,7 +38,7 @@ def calculateKey(graph, id, s_current, k_m):
 
 
 #------------------------------------------------------------------------------
-#   xxxxx
+#   Update nodes
 #------------------------------------------------------------------------------
 def updateVertex(graph, queue, id, s_current, k_m):
     s_goal = graph.goal
@@ -58,7 +58,7 @@ def updateVertex(graph, queue, id, s_current, k_m):
 
 
 #------------------------------------------------------------------------------
-#   xxxxx
+#   Compute the shortest path
 #------------------------------------------------------------------------------
 def computeShortestPath(graph, queue, s_start, k_m):
     while (
@@ -107,7 +107,7 @@ def nextInShortestPath(graph, s_current):
 
 
 #------------------------------------------------------------------------------
-#   xxxxx
+#   Scan for obstacles
 #------------------------------------------------------------------------------
 def scanForObstacles(graph, queue, s_current, scan_range, k_m):
     states_to_update = {}
@@ -148,7 +148,7 @@ def scanForObstacles(graph, queue, s_current, scan_range, k_m):
 
 
 #------------------------------------------------------------------------------
-#   xxxxx
+#   Move the the new position and scan
 #------------------------------------------------------------------------------
 def moveAndRescan(graph, queue, s_current, scan_range, k_m):
     if(s_current == graph.goal):
